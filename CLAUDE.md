@@ -76,3 +76,28 @@ English, and wait for the team to agree.
 - `src/components/ui/` — the UI building blocks
 - `src/lib/supabase/` — the database clients, with comments explaining
   which to use where
+- `context.md` — system domain context, legacy PHP parity benchmark, database schema, RLS policies, and business rules
+
+## System Context (Always Read `context.md`)
+
+Always read `context.md` before writing specs (`docs/SPEC.md`), breaking down tickets (`docs/tickets/`), or writing code. It contains:
+- Complete Hawak Kamay Scholarship & Student Portal System (HKSPS) domain rules and workflows.
+- Target PostgreSQL database schema, data models, triggers, and Row Level Security (RLS) policies.
+- Real-time duty tracking stopwatch architecture and server actions.
+
+- `architecture.md` — 1M users system design, 60 applied skills, concurrency burst shield, and engineering team ownership (Neil: UI/UX, Josiah: Backend)
+
+## System Architecture Reference (Always Read `architecture.md`)
+
+Always read `architecture.md` alongside `context.md`. It defines:
+- The 1M-user Vercel Native + Hosted Supabase request lifecycle architecture.
+- 60 Applied Engineering Skills across the 7 Software Engineering Pillars.
+- The 6-Layer High-Concurrency Burst Shield (Client Lock, Edge WAF, Zod Shield, Supavisor Queue, PostgreSQL Row Locks, Realtime Broadcast).
+- Engineering team responsibilities: **Neil** (Lead UI/UX, design tokens, responsive layouts, client interactions) and **Josiah** (Lead Backend, PostgreSQL schema, RLS, Server Actions, Supabase Auth/Storage).
+
+## Self-Contained Project Directive (Focus Exclusively on this Repository)
+
+This repository (`hksps`) is 100% self-contained. All functionality, schemas, workflows, and business rules from the legacy PHP system (`HKSPS`) are already fully documented inside `context.md` and `architecture.md`.
+- **Do NOT search for, reference, or require any external PHP files or folders.**
+- **Focus 100% of all development, specs, tickets, and code strictly within this Next.js project.**
+- Everything needed to build the complete application with full feature parity is in this repository.
